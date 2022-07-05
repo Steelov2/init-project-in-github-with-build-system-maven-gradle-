@@ -3,5 +3,7 @@ package kz.halykacademy.bookstore;
 import java.util.List;
 
 public interface BookProvider {
-    List<Book> getAll();
+    default List<Book> getAll(){
+        return null;
+    }
 }

@@ -3,6 +3,8 @@ package kz.halykacademy.bookstore;
 import java.util.List;
 
 public interface PublisherProvider {
-    List<Publisher> getAll();
+    default List<Publisher> getAll(){
+        return null;
+    }
 
 }
