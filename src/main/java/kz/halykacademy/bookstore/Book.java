@@ -1,14 +1,33 @@
 package kz.halykacademy.bookstore;
+import javax.persistence.*;
+
 
 import java.util.List;
 
+@Entity
+@Table(name="book",schema="book")
 public class Book implements BookProvider{
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name="bookId")
     private int id;
+
+    @Column(name="bookPrice")
     private double price;
+
+    @Column(name="bookAuthor")
     private List<Author> authors;
+
+    @Column(name="bookPublisher")
     private List <Publisher> publisher;
+
+    @Column(name="bookName")
     private String name;
+
+    @Column(name="bookNumberOfPages")
     private int numberOfPages;
+
+    @Column(name="bookYearOfIssue")
     private int yearOfIssue;
 
     public Book(int id, double price, List<Author> authors,

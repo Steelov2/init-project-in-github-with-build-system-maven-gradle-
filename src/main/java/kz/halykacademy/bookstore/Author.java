@@ -1,14 +1,31 @@
 package kz.halykacademy.bookstore;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 import java.util.List;
 
 public class Author implements AuthorProvider {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name="authorId")
     private int id;
+
+    @Column(name="authorSurname")
     private String surname;
+
+    @Column(name="authorName")
     private String name;
+
+    @Column(name="authorPatronymic")
     private String patronymic;
+
+    @Column(name="authorYearOfBirth")
     private Date theYearOfBirth;
+
+    @Column(name="authorsBooks")
     private List<Book> authorsBooks;
 
     public Author(int id, String surname, String name, String patronymic,
